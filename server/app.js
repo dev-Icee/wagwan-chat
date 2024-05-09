@@ -6,6 +6,7 @@ import AppError from "./utils/AppError.js";
 const app = express();
 
 app.use(express.json());
+app.use(express.static());
 
 app.use("/v1/users", usersRoute);
 app.all("*", (req, res, next) => {

@@ -1,11 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import Create from "./Create";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const submitHandler = e => {
     e.preventDefault();
-    console.log();
+    console.log("submit");
   };
+
   return (
     <div className="flex-col">
       <form className="bg-green-500 p-10 flex-auto" onSubmit={submitHandler}>
@@ -17,6 +21,8 @@ const Login = () => {
               type="email"
               id="email"
               name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
           </label>
         </div>
@@ -29,6 +35,8 @@ const Login = () => {
               type="password"
               id="password"
               name="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
           </label>
         </div>
